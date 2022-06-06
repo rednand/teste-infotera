@@ -1,0 +1,90 @@
+@import url(./root.css);
+@import url(./form.css);
+@import url(./card.css);
+@import url(./detail.css);
+
+body {
+  background-color: var(--light-gray);
+}
+
+main {
+  min-height: 100vh;
+}
+
+header {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.header-search {
+  background-color: var(--white);
+}
+.header__logo {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 26px;
+  text-align: right;
+  color: #00264d;
+}
+.header__sessao {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  line-height: 26px;
+  text-align: right;
+  color: #698096;
+}
+
+.header__sessao img {
+  margin-right: 10px;
+}
+
+.header_left a {
+  font-size: 12px;
+  line-height: 26px;
+  text-align: right;
+  color: #698096;
+  margin: 10px;
+}
+
+.header_left {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+nav {
+  width: calc(100% - 80px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 4vw;
+  height: 60px;
+}
+
+.section__title {
+  width: 50%;
+  margin: 10% auto 1%;
+  font-weight: 600;
+  font-size: 50px;
+  line-height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.section__title span {
+  color: #0080ff;
+}
+
+footer {
+  background-color: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 66px;
+  width: 100%;
+}
