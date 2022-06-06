@@ -22,17 +22,21 @@ $data = json_decode(file_get_contents($url), true);
                 <div class="card-text">
                     <p id="card-name"><?php echo $data['hotel']['name'] ?></p>
                     <p id="card-address"><img src="./img/address.svg" alt="icon_address" width="12px"><?php echo $data['hotel']['address'] ?></p>
+                    <?php for ($i = 0; $i < $data['hotel']['stars']; $i++) {
+                        echo "<img id='card-rooms-star' src='./img/star.svg' alt='icon_true' width='20px'>";
+                    } ?>
                     <p id="card-description"><?php echo $data['hotel']['description'] ?></p>
                 </div>
             </div>
             <?php
+
             foreach ($data['rooms'] as $room) {
 
                 $div = "<div id='card-rooms'>";
                 $divRight = "<div id='card-rooms-right'>";
                 $divLeft = "<div id='card-rooms-left'>";
-                $IconTrue = "<img id='true' src='./img/true.svg' alt='icon_true' width='12px'>";
-                $IconFalse = "<img id='false' src='./img/false.svg' alt='icon_false' width='12px'>";
+                $IconTrue = "<img id='true' src='./img/comcancelamento.svg' alt='icon_true' width='12px'>";
+                $IconFalse = "<img id='false' src='./img/semcancelamento.svg' alt='icon_false' width='12px'>";
                 $buttonReserve = '<button id="button-reserve" type="button" onclick="visiblemodal()">Reservar Agora</button>';
                 $roomType = $room['roomType']['name'];
                 $amount = $room['price']['amount'];

@@ -1,13 +1,17 @@
 import getHotelsData from "./service.js";
 
 const createCardHotels = async () => {
-  const cards = await getHotelsData();
-  const cardsContainer = document.querySelector("#cards");
-  cardsContainer.innerHTML = "";
-  cards.forEach((card) => {
-    const cardElement = document.createElement("div");
-    cardElement.classList.add("card");
-    cardElement.innerHTML = `
+    const cards = await getHotelsData();
+    const cardsContainer = document.querySelector("#cards");
+    cardsContainer.innerHTML = "";
+    cards.forEach((card) => {
+        let stars = "";
+        for (let i = 0; card["hotel"]["stars"] > i; i++) {
+            stars += `<img src="/desenv/img/star.svg" alt="">`;
+        }
+        const cardElement = document.createElement("div");
+        cardElement.classList.add("card");
+        cardElement.innerHTML = `
         <div class="div-card">
             <div id="card-image">
                 <p class="card-price">
@@ -19,19 +23,15 @@ const createCardHotels = async () => {
                 <h3>${card.hotel.name}</h3>
                     <div class="star-rate">
                     <div class="star">
-                        <img src="/desenv/img/star.svg" alt="avaliação">
-                        <img src="/desenv/img/star.svg" alt="avaliação">
-                        <img src="/desenv/img/star.svg" alt="avaliação">
-                        <img src="/desenv/img/star.svg" alt="avaliação">
-                        </div>
+                       ${stars} 
+                       </div>
                         <button class="button-vermais"><a href="./detail.php?id=${card.id}">Ver mais</a></button>   
                     </div>
             </div>
         </div>
         `;
-    cardsContainer.appendChild(cardElement);
-  });
+        cardsContainer.appendChild(cardElement);
+    });
 };
 
 window.addEventListener("DOMContentLoaded", createCardHotels());
-
