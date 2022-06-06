@@ -1,10 +1,8 @@
-
 async function getSuggestion(name) {
   if (name.length > 0) {
-    const dados = await fetch(`https://api.github.com/users/${name}`)
-    // const dados = await fetch(
-    //   `http://localhost:3333/suggestions?name_like=${name}&_limit=5`
-    // )
+    const dados = await fetch(
+      `http://localhost:3333/suggestions?name_like=${name}&_limit=5`
+    )
     const resposta = await dados.json();
 
     var html = "<div>";
