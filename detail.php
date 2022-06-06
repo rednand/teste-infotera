@@ -8,7 +8,15 @@ $data = json_decode(file_get_contents($url), true);
 <body>
     <?php include('./header.php') ?>
     <main>
-        <?php include('./form.php') ?><div class="card-detail">
+        <div id="modal__success" onclick="invisibleModal()">
+            <div class="modal__success-content">
+                <div class="circle"> <img src="./img/success.svg" alt="" width="20px"></div>
+                <p id="modal__success-thanks">Obrigado! </p>
+                <p> Reserva realizada com sucesso</p>
+            </div>
+        </div>
+        <?php include('./form.php') ?>
+        <div class="cards__hotel">
             <div class="card-info">
                 <img id="card-hotel" src="<?php echo $data['hotel']['image'] ?>" alt="<?php echo $data['hotel']['name'] ?>">
                 <div class="card-text">
@@ -25,7 +33,7 @@ $data = json_decode(file_get_contents($url), true);
                 $divLeft = "<div id='card-rooms-left'>";
                 $IconTrue = "<img id='true' src='./img/true.svg' alt='icon_true' width='12px'>";
                 $IconFalse = "<img id='false' src='./img/false.svg' alt='icon_false' width='12px'>";
-                $buttonReserve = '<button id="button-reserve" type="button">Reservar Agora</button>';
+                $buttonReserve = '<button id="button-reserve" type="button" onclick="visiblemodal()">Reservar Agora</button>';
                 $roomType = $room['roomType']['name'];
                 $amount = $room['price']['amount'];
                 $cancelation = $room['cancellationPolicies']['refundable'] == 1 ?  $IconTrue . "<span id='true'>Cancelamento gratuito</span>" : $IconFalse . "<span id='false'>Multa de cancelamento</span>";
@@ -43,13 +51,7 @@ $data = json_decode(file_get_contents($url), true);
             }
             ?>
         </div>
-
-    </main><?php include('./footer.php') ?>
+    </main>
+    <?php include('./footer.php') ?>
 </body>
-<script>
-    setInterval(function() {
-            location.reload(true);
-        }
-
-        , 10000);
-</script>
+<script type="text/javascript" src="./js/createModal.js"></script>

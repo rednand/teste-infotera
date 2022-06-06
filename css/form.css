@@ -10,22 +10,22 @@
   border-radius: 11px;
 }
 
-.form-group {
+.section__form-group {
   display: flex;
   flex-direction: column;
 }
 
-.form-group:nth-child(1) {
+.section__form-group:nth-child(1) {
   width: 20%;
 }
 
-.form-group input {
+.section__form-group input {
   border: none;
   margin-top: 3%;
   font-weight: 900;
 }
 
-.form-group input::placeholder {
+.section__form-group input::placeholder {
   font-size: 0.8vw;
   line-height: 26px;
   margin-top: 4%;
@@ -34,26 +34,26 @@
   border: none;
 }
 
-.form-group label {
+.section__form-group label {
   font-size: 1vw;
   line-height: 16px;
   color: #698096;
 }
 
-.form-group span {
+.section__form-group span {
   font-size: 1vw;
   line-height: 26px;
   margin-top: 3%;
   font-weight: 900;
 }
 
-.form-group img {
+.section__form-group img {
   padding-right: 5%;
   align-items: center;
   transform: translateY(15%);
 }
 
-.form-group button {
+.section__form-group button {
   margin: auto;
   width: 9vw;
   height: 6.5vh;
@@ -89,7 +89,7 @@ button {
   height: auto;
 }
 
-#poligon{
+#section__form-poligon{
   position: absolute;
   top: -85%;
   left: 0%;
@@ -98,6 +98,7 @@ button {
   display: flex;
   padding: 2%;
   flex-direction: row;
+  width: 100%;
 }
 
 .modal_li img {
