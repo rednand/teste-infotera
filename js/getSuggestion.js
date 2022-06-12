@@ -1,7 +1,8 @@
 async function getSuggestion(name) {
   if (name.length > 0) {
     const dados = await fetch(
-      `http://localhost:3333/suggestions?name_like=${name}&_limit=5`
+      // `http://localhost:3333/suggestions?name_like=${name}&_limit=5`
+      `https://api.github.com/users/${name}`
     )
     const resposta = await dados.json();
 
@@ -11,7 +12,7 @@ async function getSuggestion(name) {
       <img src='/desenv/img/location.svg' alt='icon_location'/>
       <div>
       <p id='modal_name'>${resposta.name}</p>
-      <p id='modal_country'> ${resposta.region}</p></div>
+      <p id='modal_country'> ${resposta.login}</p></div>
       </div>`;
     }
     html += "</div>";
