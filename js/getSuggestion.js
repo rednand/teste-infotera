@@ -9,7 +9,7 @@ async function getSuggestion(name) {
     var html = "<div>";
     for (i = 0; i < resposta.name.length; i++) {
       html += `<div class='modal_li'>
-      <img src='/desenv/img/location.svg' alt='icon_location'/>
+      <img src='./teste-infotera/img/location.svg' alt='icon_location'/>
       <div>
       <p id='modal_name'>${resposta.name}</p>
       <p id='modal_country'> ${resposta.login}</p></div>

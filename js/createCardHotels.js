@@ -7,7 +7,7 @@ const createCardHotels = async () => {
     cards.forEach((card) => {
         let stars = "";
         for (let i = 0; card["hotel"]["stars"] > i; i++) {
-            stars += `<img src="/desenv/img/star.svg" alt="">`;
+            stars += `<img src="/teste-infotera/img/star.svg" alt="">`;
         }
         const cardElement = document.createElement("div");
         cardElement.classList.add("card");
